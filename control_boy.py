@@ -24,6 +24,7 @@ def handle_events():
 def create_world():
     global running
     global grass
+    global grass2
     global team
     global boy
 
@@ -34,22 +35,18 @@ def create_world():
     # world.append(boy)
     game_world.add_object(boy, 1)
 
-    grass = Grass()
-    # world.append(grass)
+    grass = Grass(400, 80)
+    grass2 = Grass(400, 60)
     game_world.add_object(grass, 0)
+    game_world.add_object(grass2, 2)
 
 
 def update_world():
-    # for o in world:
-    #     o.update()
-    # pass
     game_world.update()
 
 
 def render_world():
     clear_canvas()
-    # for o in world:
-    #     o.draw()
     game_world.render()
     update_canvas()
 
